@@ -23,13 +23,13 @@ export const Navigation = () => {
     }`}>
       <div className="container mx-auto px-6 py-5">
         <div className="flex justify-between items-center">
-          <h1 className="text-xl font-light text-slate-800 tracking-wide">Portfolio</h1>
+          <h1 className="text-xl font-light text-white tracking-wide">Portfolio</h1>
           <div className="hidden md:flex space-x-2">
             {["Home", "Projects", "Skills", "About", "Contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="px-5 py-2 rounded-xl text-refined hover:text-blue-600 transition-all duration-300 font-normal fluent-hover tracking-wide"
+                className="px-5 py-2 rounded-xl text-slate-300 hover:text-white transition-all duration-300 font-normal fluent-hover tracking-wide"
               >
                 {item}
               </button>
