@@ -19,17 +19,17 @@ export const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+      isScrolled ? "glass-nav" : "bg-transparent"
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <h1 className="text-xl font-semibold text-gray-800">Portfolio</h1>
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-1">
             {["Home", "Projects", "Skills", "About", "Contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className="px-4 py-2 rounded-lg text-gray-700 hover:text-blue-600 transition-all duration-200 font-medium fluent-hover"
               >
                 {item}
               </button>
@@ -37,7 +37,7 @@ export const Navigation = () => {
           </div>
           <Button 
             onClick={() => scrollToSection("contact")}
-            className="bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+            className="glass-button text-white rounded-xl px-6 py-2 font-medium"
           >
             Get in Touch
           </Button>
