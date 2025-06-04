@@ -1,83 +1,54 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 
 export const Contact = () => {
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+  const handleContactClick = () => {
+    window.open('mailto:hello@yourportfolio.com?subject=Collaboration', '_blank');
   };
 
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <div className="glass-card p-8 rounded-3xl inline-block">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
-              Get In <span className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Touch</span>
+    <section id="contact" className="py-32 relative overflow-hidden">
+      {/* Subtle background elements */}
+      <div className="absolute top-20 right-10 w-40 h-40 glass rounded-full animate-float opacity-30"></div>
+      <div className="absolute bottom-20 left-10 w-24 h-24 glass rounded-2xl animate-float opacity-40" style={{animationDelay: '3s'}}></div>
+      
+      <div className="container mx-auto px-6 text-center relative z-10">
+        <div className="max-w-3xl mx-auto">
+          {/* Title Section */}
+          <div className="glass-card p-12 rounded-3xl mb-12 animate-slide-up">
+            <h2 className="text-4xl md:text-6xl font-light text-slate-800 mb-6 tracking-tight">
+              Collaborons
+              <span className="block font-medium bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+                Ensemble
+              </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Let's discuss your next project or collaboration opportunity
+            <p className="text-xl md:text-2xl text-refined-light max-w-2xl mx-auto font-light leading-relaxed">
+              Créons quelque chose d'extraordinaire. Une idée, un projet, une vision ?
             </p>
           </div>
-        </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div className="glass-card p-8 rounded-3xl">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-6">Let's work together</h3>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              I'm always interested in new opportunities and collaborations. 
-              Whether you have a project in mind or just want to chat about technology, 
-              feel free to reach out.
-            </p>
+          {/* Contact Button */}
+          <div className="glass-card p-8 rounded-3xl animate-slide-up" style={{animationDelay: '0.2s'}}>
+            <Button 
+              onClick={handleContactClick}
+              size="lg"
+              className="glass-button text-white rounded-2xl px-12 py-6 text-lg font-medium tracking-wide hover:scale-105 transition-all duration-300"
+            >
+              Démarrer une conversation
+            </Button>
             
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3 glass p-4 rounded-xl">
-                <div className="w-3 h-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
-                <span className="text-gray-600 font-medium">hello@yourportfolio.com</span>
+            {/* Subtle contact info */}
+            <div className="mt-8 space-y-3">
+              <div className="flex items-center justify-center space-x-2 text-refined-light">
+                <div className="w-1 h-1 bg-blue-500 rounded-full"></div>
+                <span className="text-sm font-medium">hello@yourportfolio.com</span>
               </div>
-              <div className="flex items-center space-x-3 glass p-4 rounded-xl">
-                <div className="w-3 h-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
-                <span className="text-gray-600 font-medium">+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3 glass p-4 rounded-xl">
-                <div className="w-3 h-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
-                <span className="text-gray-600 font-medium">San Francisco, CA</span>
+              <div className="flex items-center justify-center space-x-2 text-refined-light">
+                <div className="w-1 h-1 bg-blue-500 rounded-full"></div>
+                <span className="text-sm font-medium">Disponible pour nouvelles opportunités</span>
               </div>
             </div>
           </div>
-
-          <Card className="glass-card border-white/20 p-8 rounded-3xl fluent-shadow-lg">
-            <CardContent className="p-0">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <Input placeholder="First Name" required className="glass border-white/30 rounded-xl" />
-                  <Input placeholder="Last Name" required className="glass border-white/30 rounded-xl" />
-                </div>
-                <Input type="email" placeholder="Email Address" required className="glass border-white/30 rounded-xl" />
-                <Input placeholder="Subject" required className="glass border-white/30 rounded-xl" />
-                <Textarea 
-                  placeholder="Your message..." 
-                  className="min-h-32 glass border-white/30 rounded-xl" 
-                  required 
-                />
-                <Button 
-                  type="submit" 
-                  className="w-full glass-button text-white rounded-xl py-3 font-medium"
-                >
-                  Send Message
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>

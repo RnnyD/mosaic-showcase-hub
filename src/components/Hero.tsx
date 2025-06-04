@@ -9,46 +9,51 @@ export const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
+      <div className="absolute inset-0 bg-grid-subtle opacity-40"></div>
       
-      {/* Floating glass elements for decoration */}
-      <div className="absolute top-20 left-10 w-32 h-32 glass rounded-3xl animate-float"></div>
-      <div className="absolute top-40 right-20 w-24 h-24 glass rounded-2xl animate-float" style={{animationDelay: '2s'}}></div>
-      <div className="absolute bottom-32 left-1/4 w-20 h-20 glass rounded-xl animate-float" style={{animationDelay: '4s'}}></div>
+      {/* Refined floating elements */}
+      <div className="absolute top-32 left-16 w-32 h-32 glass rounded-3xl animate-float opacity-20"></div>
+      <div className="absolute top-48 right-24 w-20 h-20 glass rounded-2xl animate-float opacity-30" style={{animationDelay: '2s'}}></div>
+      <div className="absolute bottom-40 left-1/3 w-16 h-16 glass rounded-xl animate-float opacity-25" style={{animationDelay: '4s'}}></div>
       
       <div className="container mx-auto px-6 text-center relative z-10">
-        <div className="glass-card p-12 rounded-3xl animate-fade-in max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-light text-gray-800 mb-6 leading-tight">
-            Creative
-            <span className="block font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Developer
-            </span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto font-light">
-            Crafting digital experiences with modern technologies and thoughtful design
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="glass-card p-16 rounded-3xl animate-fade-in max-w-5xl mx-auto minimal-shadow-lg">
+          <div className="mb-8">
+            <h1 className="text-6xl md:text-8xl font-extralight text-slate-800 mb-8 leading-tight tracking-tight">
+              Creative
+              <span className="block font-light bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+                Developer
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-refined max-w-3xl mx-auto font-light leading-relaxed tracking-wide">
+              Concevoir des expériences numériques avec une approche moderne et réfléchie
+            </p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
               onClick={scrollToProjects}
               size="lg"
-              className="glass-button text-white rounded-xl px-8 py-3 font-medium"
+              className="glass-button text-white rounded-2xl px-10 py-4 text-lg font-medium tracking-wide"
             >
-              View My Work
+              Découvrir mes projets
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="glass border-blue-600/30 text-blue-600 hover:bg-blue-50/50 rounded-xl px-8 py-3 font-medium transition-all duration-300"
+              className="glass border-blue-500/20 text-blue-600 hover:bg-blue-50/30 rounded-2xl px-10 py-4 text-lg font-medium tracking-wide transition-all duration-300"
             >
-              Download Resume
+              Télécharger CV
             </Button>
           </div>
         </div>
+        
+        {/* Refined scroll indicator */}
         <button 
           onClick={scrollToProjects}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce glass p-3 rounded-full"
+          className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce glass p-4 rounded-full minimal-shadow hover:scale-110 transition-all duration-300"
         >
-          <ArrowDown className="text-blue-600 w-6 h-6" />
+          <ArrowDown className="text-blue-600 w-5 h-5" />
         </button>
       </div>
     </section>
